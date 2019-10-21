@@ -1,0 +1,38 @@
+nav {
+    background: #ddd;
+    padding: 0em;
+}
+
+nav ul {
+    padding: 0rem;
+}
+
+nav a{
+    width: 100%;
+}
+
+nav li {
+    width: 100%;
+    padding: 0.5rem;
+    list-style: none;
+    text-align: center;
+
+    &:hover {
+        background: rgba(0,0,0,0.2);
+    }
+}
+
+
+/***************
+  Media Query 
+****************/
+
+@media only screen and (min-width: 1080px) {
+    nav ul {
+        display: flex;
+    }
+    nav li{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
