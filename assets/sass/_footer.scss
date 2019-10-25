@@ -1,9 +1,4 @@
 footer {
-    background: #ddd;
-    padding: 1rem 2rem;
-    display: flex;
-
-    p {
-        align-self: center;
-    }
+    background: $footer-bg-color;
+    padding: 1rem 0;
 }

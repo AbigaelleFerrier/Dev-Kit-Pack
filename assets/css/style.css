@@ -477,6 +477,202 @@ template {
   display: none !important;
 }
 
+/** ========================  END  ======================== **/
+/** ========================   OF  ======================== **/
+/** ======================== RESET ======================== **/
+/** ========================  CSS  ======================== **/
+/******************************/
+.icon {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+footer {
+  background: #252525;
+  padding: 1rem 0;
+}
+
+body {
+  padding-top: 75px;
+}
+
+.navLike {
+  background: #252525;
+  min-height: 75px;
+  height: 75px;
+  max-height: 75px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLike span.navIcon a {
+  color: #00fda9 !important;
+}
+.navLike span.navIcon a:hover {
+  color: white !important;
+}
+.navLike > div {
+  display: flex;
+}
+.navLike > div h2 {
+  z-index: 1002;
+  color: #00fda9;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.navLike > div input[type=checkbox] {
+  opacity: 0;
+  display: none;
+}
+.navLike > div input + label {
+  position: relative;
+  height: 18px;
+  width: 15px;
+  top: 5px;
+  margin-right: 10px;
+  z-index: 1002;
+  margin-bottom: 0;
+}
+.navLike > div input + label span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  margin-top: -1px;
+  left: 0;
+  display: block;
+  background: #00fda9;
+  transition: 0.5s;
+}
+.navLike > div input + label span:first-child {
+  top: 3px;
+}
+.navLike > div input + label span:last-child {
+  top: 16px;
+}
+.navLike > div label:hover {
+  cursor: pointer;
+}
+.navLike > div input:checked + label span {
+  opacity: 0;
+  top: 50%;
+}
+.navLike > div input:checked + label span:first-child {
+  opacity: 1;
+  transform: rotate(405deg);
+}
+.navLike > div input:checked + label span:last-child {
+  opacity: 1;
+  transform: rotate(-405deg);
+}
+.navLike > div input ~ nav {
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 75px;
+  left: -100%;
+  height: 100%;
+  z-index: 999;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.navLike > div input ~ nav div {
+  align-items: center;
+  margin: 0;
+  padding: 0px;
+}
+.navLike > div input ~ nav div a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #00fda9;
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 0px;
+}
+.navLike > div input ~ nav div a:hover {
+  background: #1d1d1d;
+  color: white !important;
+}
+.navLike > div input:checked ~ nav {
+  height: 100%;
+  background: #252525;
+  top: 75px;
+  left: 0px;
+  transition-delay: 0s;
+  display: flex;
+  flex-direction: column;
+}
+
+/***************
+    Media Query 
+****************/
+@media only screen and (max-width: 767px) {
+  .navLike {
+    padding: 0 0.5rem;
+  }
+  .navLike > div input ~ nav {
+    width: 100%;
+    min-width: CC-taille-min-nav(768px, 50%) px;
+  }
+  .navLike > div input ~ nav > div a {
+    padding-left: 0.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .navLike {
+    padding: 0 1rem;
+  }
+  .navLike > div input ~ nav {
+    width: 70%;
+    min-width: CC-taille-min-nav(768px, 50%) px;
+  }
+  .navLike > div input ~ nav > div a {
+    padding-left: 1rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .navLike {
+    padding: 0 3rem;
+  }
+  .navLike > div input ~ nav {
+    width: 50%;
+    min-width: CC-taille-min-nav(992px, 50%) px;
+  }
+  .navLike > div input ~ nav > div a {
+    padding-left: 3rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .navLike {
+    padding: 0 5rem;
+  }
+  .navLike > div input ~ nav {
+    width: 20%;
+    min-width: CC-taille-min-nav(1200px, 50%) px;
+  }
+  .navLike > div input ~ nav > div a {
+    padding-left: 5rem;
+  }
+}
 h1, p {
   text-align: center;
 }
@@ -511,50 +707,6 @@ Media Query
   .row {
     width: 70%;
   }
-}
-nav {
-  background: #ddd;
-  padding: 0em;
-}
-
-nav ul {
-  padding: 0rem;
-}
-
-nav a {
-  width: 100%;
-}
-
-nav li {
-  width: 100%;
-  padding: 0.5rem;
-  list-style: none;
-  text-align: center;
-}
-nav li:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-/***************
-  Media Query 
-****************/
-@media only screen and (min-width: 1080px) {
-  nav ul {
-    display: flex;
-  }
-
-  nav li {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-footer {
-  background: #ddd;
-  padding: 1rem 2rem;
-  display: flex;
-}
-footer p {
-  align-self: center;
 }
 
 /*# sourceMappingURL=style.css.map */
